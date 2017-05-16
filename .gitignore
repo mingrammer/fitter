@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Idea files
+.idea/
+
+# Configuration includes secret values
+resizer.yaml
