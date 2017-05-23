@@ -1,2 +1,2 @@
 # fitter
-An image resizing server for generating dynamic images
+fitter is an on-demand image server for generating dynamic images
