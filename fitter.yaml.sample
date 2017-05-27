@@ -1,0 +1,76 @@
+# Fitter server port, Default is 6001
+port: 6001
+
+# Secret key for your application
+# Would be random hex string with 48 length
+secret_key: ...
+
+# Optional
+# You can use cache server for storing/caching the generated image filename
+cache_store:
+  # If you want to use it, should specify the cache server type one of followings
+  # 1. redis
+  # 2. in-memory
+
+  # type: ...
+  # host: ...
+  # port: ...
+  # password: ...
+  # db: ...
+
+# You must specify the storage config
+storage:
+  # You should specify the storage type one of followings
+  # 1. fs (refers to file system)
+  # 2. s3 (refers to AWS S3)
+  #
+  # If you want to use a single storage for both source and store, you should set the 'store' only
+
+  # As image source which will be used for generating resized images
+  source:
+    # Source storage config
+
+    # ## If you use AWS S3 as storage. Specify the followings
+    # type: s3
+    # aws_access_key_id: ...
+    # aws_secret_access_key: ...
+    # bucket_name: ...
+    # bucket_region: ...
+    # location: ...
+
+    # ## If you use file system as storage. Specify the followings
+    # type: fs
+    # base_url: ...
+    # location: ...
+
+  # The generated images will be stored in this storage. Cached images will be located here
+  store:
+    # Store storage config
+
+    # ## If you use AWS S3 as storage. Specify the followings
+    # type: s3
+    # aws_access_key_id: ...
+    # aws_secret_access_key: ...
+    # bucket_name: ...
+    # bucket_region: ...
+    # location: ...
+
+    # ## If you use file system as storage. Specify the followings
+    # type: fs
+    # base_url: ...
+    # location: ...
+
+# Optional
+options:
+  # Enable the uploading the image to fitter server. Defualt is 'false'
+  enable_upload: false
+
+  # Enable the hashing of filename. Default is 'true'
+  # If you set this as false, the filename of generated image will be same as the requested images' one
+  enable_hash: true
+  # TODO: Supports followings
+  # shard
+  # prefix
+  # allowed_size
+  # allowed_format
+  # thumbnail_size
