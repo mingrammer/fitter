@@ -109,7 +109,7 @@ class FitterConfig:
             eprint('There are some missing values for cache store: one of {}'.format(_required_fields))
             return False
         if cache_store_config['type'] not in ('redis', 'in-memory'):
-            eprint('\'{}\' is not supported type for cache store'.format(cache_store_type))
+            eprint('\'{}\' is not supported type for cache store'.format(cache_store_config['type']))
             return False
         return True
 
