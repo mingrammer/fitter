@@ -172,6 +172,8 @@ options:
 
   * **/show**: Get the image information asynchronously. It is usefule on like `<img>` tag. It will returns following json
 
+    > Note: Can not use this asynchronously yet. I'll make it ASAP
+
     ```
     { 
     	'filename': 'image',
