@@ -1,8 +1,8 @@
 from flask import Flask
 
 from config import FitterConfig
+from fitter.cachestore.inmemory import InMemoryStore
 from fitter.cachestore.redis import RedisStore
-from fitter.cachestore.sqlite3 import SQLite3Store
 from fitter.storage.fs import FileSystemSourceStorage
 from fitter.storage.fs import FileSystemStoreStorage
 from fitter.storage.s3 import S3SourceStorage
@@ -41,7 +41,7 @@ if fitter.config['CACHE_STORE']['TYPE'] == 'redis':
         fitter.config['CACHE_STORE']['PASSWORD'],
     )
 elif fitter.config['CACHE_STORE']['TYPE'] == 'in-memory':
-    fitter.cache_store = SQLite3Store()
+    fitter.cache_store = InMemoryStore()
 
 _source_storage_config = fitter.config['SOURCE_STORAGE']
 _store_storage_config = fitter.config['STORE_STORAGE']
