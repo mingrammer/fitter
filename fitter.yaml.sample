@@ -7,6 +7,7 @@ secret_key: ...
 
 # Optional
 # You can use cache server for storing/caching the generated image filename
+# * Using the in memory without cache server is not recommended
 cache_store:
   # If you want to use it, should specify the cache server type one of followings
   # 1. redis
