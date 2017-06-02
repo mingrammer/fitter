@@ -2,6 +2,8 @@
 
 ![logo](image/logo.png)
 
+> I'm planning of make fitter a pluggable service based on serverless architecture
+
 The **fitter** is an on-demand image server for generating dynamic images. It provides some various actions and modes to generate the dynamic images with desired parameters. As on-demand means, **fitter** is an on-demand server to generate the various images for your mobile app and website whenever those need it. It can be used on following scenarios.
 
 * Backend on-demand image server
